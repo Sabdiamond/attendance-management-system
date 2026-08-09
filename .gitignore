@@ -1,0 +1,27 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+
+# Secrets — never commit real config with credentials
+**/appsettings.Development.json
+**/appsettings.Production.json
+
+# Node / Next.js
+node_modules/
+frontend/.next/
+frontend/.env.local
+frontend/.env*.local
+npm-debug.log*
+
+# OS / Editor
+.vs/
+.vscode/*
+!.vscode/extensions.json
+Thumbs.db
+.DS_Store
+
+# Aspire
+**/bin/
+**/obj/

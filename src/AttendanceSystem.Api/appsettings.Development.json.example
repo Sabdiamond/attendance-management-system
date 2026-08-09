@@ -1,0 +1,22 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "Email": {
+    "SmtpHost": "smtp.gmail.com",
+    "SmtpPort": 587,
+    "SenderEmail": "your-email@gmail.com",
+    "SenderPassword": "your-gmail-app-password",
+    "SenderName": "Saberedowo University Attendance System"
+  },
+  "Jwt": {
+    "Secret": "replace-with-a-long-random-secret-key",
+    "Issuer": "AttendanceSystem",
+    "Audience": "AttendanceSystemClient",
+    "ExpiryMinutes": 60
+  },
+  "FrontendBaseUrl": "http://localhost:3000"
+}
