@@ -1,0 +1,11 @@
+frontend/
+**/bin/
+**/obj/
+**/.vs/
+**/.next/
+**/node_modules/
+*.user
+appsettings.Development.json
+.git/
+.gitignore
+README.md
