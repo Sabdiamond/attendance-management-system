@@ -27,6 +27,15 @@ RUN dotnet publish src/AttendanceSystem.Api/AttendanceSystem.Api.csproj \
 # ---- Runtime stage ----
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
 WORKDIR /app
+
+# Npgsql needs this native library for connection negotiation, even when
+# using plain password auth rather than Kerberos/GSSAPI. The slim base
+# image doesn't include it, which produces a "Cannot load library
+# libgssapi_krb5.so.2" warning (and can cause unreliable connection
+# behavior) if left out.
+RUN apt-get update && apt-get install -y --no-install-recommends libgssapi-krb5-2 \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY --from=build /app/publish .
 
 # Render injects a PORT environment variable at runtime and expects the
